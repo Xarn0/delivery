@@ -3,36 +3,42 @@ import airplane from "@/components/icons/airplane.vue";
 import headHuman from "@/components/icons/headHuman.vue";
 import planet from "@/components/icons/planet.vue";
 import bodyHuman from "@/components/icons/bodyHuman.vue";
-import templatBlock from "@/components/template/templatBlock.vue";
 </script>
 
 <template>
-	<v-row>
-		<v-col cols="6" class="d-flex flex-column ga-10">
-			<h2
-				class="text-white"
-				style="font-size: 62px; line-height: 70px; font-family: 'Gilroy'"
-			>
-				Доставка товаров из Великобритании в Россию
-			</h2>
+	<v-container>
+		<v-row>
+			<v-col cols="12" lg="6" class="d-flex flex-column ga-10">
+				<h2
+					class="text-white text-center text-h4 text-lg-left text-md-h2"
+					style="line-height: 40px; font-family: 'Gilroy'"
+				>
+					Доставка товаров из Великобритании в Россию
+				</h2>
 
-			<p class="text-white" style="line-height: 40px">
-				Начните экономить до 80% на шопинге. Регистрируйтесь в OkeyPost, чтобы
-				покупать со скидками в UK одежду, обувь, гаджеты известных брендов и
-				безопасно отправлять вещи в Россию.
-			</p>
-			<v-btn class="button-green align-self-start" flat
-				>Получить адрес в UK</v-btn
+				<p class="text-white text-h6 text-lg-body-1" style="line-height: 40px">
+					Начните экономить до 80% на шопинге. Регистрируйтесь в OkeyPost, чтобы
+					покупать со скидками в UK одежду, обувь, гаджеты известных брендов и
+					безопасно отправлять вещи в Россию.
+				</p>
+				<v-btn
+					class="button-green d-flex align-self-center align-self-lg-start text-h6 text-sm-h5 text-lg-body-1 pa-6 pa-lg-2"
+					flat
+					>Получить адрес в UK</v-btn
+				>
+			</v-col>
+			<v-col
+				cols="12"
+				lg="6"
+				class="palnet-position d-none d-sm-flex justify-center d-lg-block"
 			>
-		</v-col>
-		<v-col cols="6" class="palnet-position">
-			<planet></planet><airplane class="airplane" />
+				<planet></planet><airplane class="airplane" />
 
-			<div class="human">
-				<headHuman class="headHuman" /> <bodyHuman class="bodyHuman" />
-			</div>
-		</v-col>
-	</v-row>
+				<div class="human">
+					<headHuman class="headHuman" /> <bodyHuman class="bodyHuman" />
+				</div>
+			</v-col> </v-row
+	></v-container>
 </template>
 <style scoped>
 .palnet-position {

@@ -52,76 +52,89 @@ const nextSlide = () => {
 
 <template>
 	<v-carousel
-		class="mt-8"
+		class="mt-8 h-auto"
 		v-model="currentSlide"
 		:show-arrows="false"
 		hide-delimiters
 	>
 		<v-carousel-item v-for="(slide, index) in slides" :key="index">
-			<keep-alive>
-				<v-row>
-					<v-col cols="12">
-						<v-row class="d-flex justify-space-between align-center">
-							<v-col
-								md="3"
-								class="d-flex flex-column justify-center align-center templateCard__left"
+			<v-row>
+				<v-col cols="12">
+					<v-row class="d-flex justify-space-between align-center">
+						<v-col
+							lg="3"
+							order="2"
+							order-lg="1"
+							sm="6"
+							cols="12"
+							class="d-flex flex-column justify-center align-center templateCard__left"
+						>
+							<h5 class="templateCard__left-title">
+								Заказывай в Великобритании, пользуйся в России
+							</h5>
+							<div
+								class="bg-blue-grey-lighten-4 rounded-lg d-flex w-100 justify-sm-center pa-6 pt-2 pb-2 ga-4 align-center"
 							>
-								<h5 class="templateCard__left-title">
-									Заказывай в Великобритании, пользуйся в России
-								</h5>
-								<div
-									class="bg-blue-grey-lighten-4 rounded-lg d-flex justify-center pa-6 pt-2 pb-2 ga-4 align-center"
-								>
-									<img
-										class="templateCard__left-img"
-										src="@/assets/img/russian.png"
-										alt="flag"
-									/>
-									<div class="">
-										<span class="templateCard__left-priceTitle"
-											>Цена в России</span
-										>
-										<p class="templateCard__left-price">
-											{{ (Math.random() * 10000).toFixed(2) }}₽
-										</p>
-									</div>
-								</div>
-							</v-col>
-							<v-col md="5">
-								<div class="d-flex bg-blue-grey-lighten-4 templateCard__center">
-									<v-img :src="`/img/${linkImg}${slide.img}`" />
-								</div>
-							</v-col>
-							<v-col md="3" class="templateCard__right"
-								><h5 class="templateCard__right-title">
-									Доставка {{ props.title }} из Великобритании от
-									<span class="templateCard__right-price"
-										>£{{ props.price }}</span
+								<img
+									class="templateCard__left-img"
+									src="@/assets/img/russian.png"
+									alt="flag"
+								/>
+								<div class="">
+									<span class="templateCard__left-priceTitle"
+										>Цена в России</span
 									>
-								</h5>
-								<div
-									class="bg-blue-grey-lighten-4 rounded-lg d-flex w-100 pa-6 pt-2 pb-2 ga-4 align-center align-self-start"
+									<p class="templateCard__left-price">
+										{{ (Math.random() * 10000).toFixed(2) }}₽
+									</p>
+								</div>
+							</div>
+						</v-col>
+						<v-col
+							cols="12"
+							order-lg="2"
+							order="3"
+							lg="5"
+							class="d-flex justify-center"
+							height="500px"
+						>
+							<div class="d-flex bg-blue-grey-lighten-4 templateCard__center">
+								<v-img :src="`/img/${linkImg}${slide.img}`" />
+							</div>
+						</v-col>
+						<v-col
+							sm="6"
+							cols="12"
+							order="1"
+							order-lg="3"
+							lg="3"
+							class="templateCard__right"
+							><h5 class="templateCard__right-title">
+								Доставка {{ props.title }} из Великобритании от
+								<span class="templateCard__right-price text-h6"
+									>£{{ props.price }}</span
 								>
-									<img
-										class="templateCard__right-img"
-										src="@/assets/img/uk.png"
-										alt="flag"
-									/>
-									<div class="">
-										<span class="templateCard__right-priceTitle"
-											>Цена в UK</span
-										>
-										<p class="templateCard__right-price">£80.62</p>
-									</div>
-								</div></v-col
+							</h5>
+							<div
+								class="bg-blue-grey-lighten-4 rounded-lg d-flex w-100 pa-6 pt-2 pb-2 ga-4 align-center align-self-start"
 							>
-						</v-row>
-					</v-col>
-				</v-row></keep-alive
-			>
+								<img
+									class="templateCard__right-img"
+									src="@/assets/img/uk.png"
+									alt="flag"
+								/>
+								<div class="">
+									<span class="templateCard__right-priceTitle">Цена в UK</span>
+									<p class="templateCard__right-price">£80.62</p>
+								</div>
+							</div></v-col
+						>
+					</v-row>
+				</v-col>
+			</v-row>
 		</v-carousel-item>
 	</v-carousel>
-	<div class="controls d-flex justify-space-between">
+	<div class="controls d-none d-sm-flex justify-space-between">
 		<div
 			class="controls__container d-flex ga-4 align-center"
 			v-if="currentSlide > 0"
@@ -146,9 +159,9 @@ const nextSlide = () => {
 					</svg> </v-icon
 			></v-btn>
 		</div>
-		<div class="controls__text">
+		<div class="controls__text d-none d-md-block">
 			<p>Срок доставки примерно 10 дней</p>
-			<h4>
+			<h4 class="text-h5 font-weight-bold">
 				Вы экономите до <span class="templateCard__right-price">$119.56</span>
 			</h4>
 		</div>
@@ -183,19 +196,27 @@ const nextSlide = () => {
 <style lang="scss">
 .templateCard {
 	&__left {
-		gap: 30px;
+		gap: 10px;
+		@media (min-width: 600px) {
+			gap: 30px;
+		}
 		&-img {
 			width: 74px;
 			height: 54px;
 		}
 		&-title {
 			font-size: 19px;
-			width: 304px;
-			line-height: 40px;
-			align-self: flex-start;
+
+			line-height: 29px;
+
+			@media (min-width: 600px) {
+				width: 304px;
+				align-self: flex-start;
+			}
 		}
 		&-priceTitle {
 			font-size: 18px;
+			white-space: preserve nowrap;
 		}
 		&-price {
 			font-size: 26px;
@@ -203,16 +224,32 @@ const nextSlide = () => {
 		}
 	}
 	&__center {
-		width: 446px;
 		border-radius: 50%;
-		height: 446px;
+
+		width: 300px;
+		height: 290px;
+		@media (min-width: 375px) {
+			width: 346px;
+			height: 346px;
+		}
+		@media (min-width: 768px) {
+			width: 246px;
+			height: 246px;
+		}
+		@media (min-width: 1281px) {
+			width: 446px;
+			height: 446px;
+		}
 	}
 	&__right {
+		gap: 10px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		gap: 30px;
+		@media (min-width: 600px) {
+			gap: 30px;
+		}
 		&-price {
 			color: #01cd7d;
 			font-size: 26px;
@@ -223,8 +260,10 @@ const nextSlide = () => {
 		}
 		&-title {
 			font-size: 19px;
-			width: 304px;
-			align-self: flex-start;
+			@media (min-width: 600px) {
+				width: 304px;
+				align-self: flex-start;
+			}
 		}
 	}
 }
@@ -243,7 +282,7 @@ const nextSlide = () => {
 		}
 		h4 {
 			text-align: center;
-			font-size: 26px;
+
 			font-family: "Gilroy";
 		}
 	}

@@ -100,8 +100,7 @@ let tab = ref(null);
 							:title="item.subtitle"
 							:price="8.62"
 						></templateCard>
-					</v-tabs-window-item>
-				</v-tabs-window>
-			</v-card-text> </v-card
+					</v-tabs-window-item> </v-tabs-window
+			></v-card-text> </v-card
 	></ClientOnly>
 </template>
