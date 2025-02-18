@@ -42,7 +42,7 @@ let array: ArrayType[] = reactive([
 <template>
 	<v-container>
 		<v-card flat>
-			<v-list class="d-flex justify-space-between">
+			<v-list class="d-flex justify-space-between flex-wrap ga-4">
 				<v-list-item
 					v-for="(item, index) in array"
 					:key="index"
@@ -60,7 +60,9 @@ let array: ArrayType[] = reactive([
 
 <style scoped lang="scss">
 .listOffers {
-	border-right: 2px solid $grey;
+	@media (min-width: 1280px) {
+		border-right: 2px solid $grey;
+	}
 }
 .listOffers:last-child {
 	border-right: none;

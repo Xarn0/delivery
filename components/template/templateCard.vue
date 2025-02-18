@@ -52,7 +52,7 @@ const nextSlide = () => {
 
 <template>
 	<v-carousel
-		class="mt-8 h-auto"
+		class="mt-8 carousell"
 		v-model="currentSlide"
 		:show-arrows="false"
 		hide-delimiters
@@ -299,6 +299,12 @@ const nextSlide = () => {
 			object-fit: contain;
 		}
 		border-radius: 50%;
+	}
+}
+
+.carousell {
+	@media (max-width: 600px) {
+		height: auto !important;
 	}
 }
 </style>

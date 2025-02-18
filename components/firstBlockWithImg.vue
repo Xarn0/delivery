@@ -10,8 +10,7 @@ import bodyHuman from "@/components/icons/bodyHuman.vue";
 		<v-row>
 			<v-col cols="12" lg="6" class="d-flex flex-column ga-10">
 				<h2
-					class="text-white text-center text-h4 text-lg-left text-md-h2"
-					style="line-height: 40px; font-family: 'Gilroy'"
+					class="text-white text-center text-h4 text-lg-left text-md-h2 title-main"
 				>
 					Доставка товаров из Великобритании в Россию
 				</h2>
@@ -67,5 +66,14 @@ import bodyHuman from "@/components/icons/bodyHuman.vue";
 	right: 20%;
 	transform: rotate(0deg) translateX(0px);
 	/* animation: identifier 5s infinite ease-in alternate; */
+}
+.title-main {
+	line-height: 40px;
+	font-family: "Gilroy";
+}
+@media (min-width: 600px) {
+	.title-main {
+		line-height: 70px;
+	}
 }
 </style>
