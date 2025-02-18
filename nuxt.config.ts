@@ -40,6 +40,15 @@ export default defineNuxtConfig({
 			}
 		}
 	},
+	app: {
+		baseURL: "/delivery/" // GitHub Pages требует префикс
+	},
+	routeRules: {
+		"/**": { prerender: true } // Пререндеринг всех страниц
+	},
+	nitro: {
+		preset: "static" // Генерируем статический сайт
+	},
 
 	compatibilityDate: "2025-02-15"
 });
