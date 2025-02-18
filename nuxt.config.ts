@@ -2,14 +2,12 @@
 import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 export default defineNuxtConfig({
 	devtools: { enabled: true },
-	ssr: false,
 
 	runtimeConfig: {
 		public: {
 			apiBase: "http://localhost/wp2/wp-json/wp/v2" // Проверь, что этот адрес доступен!
 		}
 	},
-
 	css: ["~/assets/scss/style.scss"],
 
 	build: {
@@ -41,7 +39,7 @@ export default defineNuxtConfig({
 		}
 	},
 	app: {
-		baseURL: "/delivery/" // GitHub Pages требует префикс
+		baseURL: "/delivery/"
 	},
 	routeRules: {
 		"/**": { prerender: true } // Пререндеринг всех страниц
