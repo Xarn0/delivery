@@ -5,7 +5,7 @@ export default defineNuxtConfig({
 
 	runtimeConfig: {
 		public: {
-			apiBase: "http://localhost/wp2/wp-json/wp/v2" // Проверь, что этот адрес доступен!
+			// apiBase: "http://localhost/wp2/wp-json/wp/v2" // Проверь, что этот адрес доступен!
 		}
 	},
 	css: ["~/assets/scss/style.scss"],
