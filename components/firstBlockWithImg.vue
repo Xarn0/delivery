@@ -20,11 +20,34 @@ import bodyHuman from "@/components/icons/bodyHuman.vue";
 					покупать со скидками в UK одежду, обувь, гаджеты известных брендов и
 					безопасно отправлять вещи в Россию.
 				</p>
-				<v-btn
-					class="button-green d-flex align-self-center align-self-lg-start text-h6 text-sm-h5 text-lg-body-1 pa-6 pa-lg-2"
-					flat
-					>Получить адрес в UK</v-btn
-				>
+
+				<v-dialog max-width="500">
+					<template v-slot:activator="{ props: activatorProps }">
+						<v-btn
+							v-bind="activatorProps"
+							class="button-green d-flex align-self-center align-self-lg-start text-h6 text-sm-h5 text-lg-body-1 pa-6 pa-lg-2"
+							flat
+							>Получить адрес в UK</v-btn
+						>
+					</template>
+
+					<template v-slot:default="{ isActive }">
+						<v-card title="Фома получение">
+							<v-card-text> Получить адрес в UK? </v-card-text>
+
+							<v-card-actions>
+								<v-spacer></v-spacer>
+
+								<v-btn
+									text="Получить"
+									@click="isActive.value = false"
+									class="bg-green-accent-3"
+									color="white"
+								></v-btn>
+							</v-card-actions>
+						</v-card>
+					</template>
+				</v-dialog>
 			</v-col>
 			<v-col
 				cols="12"
