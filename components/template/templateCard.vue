@@ -99,7 +99,7 @@ const nextSlide = () => {
 							height="500px"
 						>
 							<div class="d-flex bg-blue-grey-lighten-4 templateCard__center">
-								<v-img :src="`/img/${linkImg}${slide.img}`" />
+								<v-img :src="`/delivery/img/${linkImg}${slide.img}`" />
 							</div>
 						</v-col>
 						<v-col
@@ -141,7 +141,7 @@ const nextSlide = () => {
 			@click="prevSlide"
 		>
 			<div class="controls__img cursor-pointer">
-				<img :src="`/img/${linkImg}${slides[currentSlide - 1].img}`" />
+				<img :src="`/delivery/img/${linkImg}${slides[currentSlide - 1].img}`" />
 			</div>
 			<v-btn flat
 				><v-icon size="30"
@@ -187,7 +187,7 @@ const nextSlide = () => {
 					</svg> </v-icon
 			></v-btn>
 			<div class="controls__img cursor-pointer">
-				<img :src="`/img/${linkImg}${slides[currentSlide + 1].img}`" />
+				<img :src="`/delivery/img/${linkImg}${slides[currentSlide + 1].img}`" />
 			</div>
 		</div>
 	</div>
